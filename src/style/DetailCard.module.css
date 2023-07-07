@@ -1,0 +1,84 @@
+/* Estilos generales del DetailCard */
+.detailCard {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.detailCard p, h2 {
+  margin: 0px;
+}
+
+.detailCard h2 {
+  margin-bottom: 6%;
+}
+
+.detailCard img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+.textIconContainer {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: 10px;
+}
+
+.textIconContainer p {
+  font-size: smaller;
+}
+
+.icon {
+  font-size: 12px;
+}
+
+button {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  gap: 10px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+
+button .icon {
+  font-size: 20px;
+}
+
+/* Estilos para el tema claro */
+.detailCard.light {
+  background-color: var(--color-background-secondary-light);
+  color: var(--color-text-light);
+}
+
+.detailCard.light .textIconContainer p {
+  color: var(--color-text-light);
+}
+
+.detailCard.light button {
+  background-color: var(--color-primary-light);
+  color: var(--color-text-light);
+}
+
+/* Estilos para el tema oscuro */
+.detailCard.dark {
+  background-color: var(--color-primary-dark);
+  color: var(--color-text-dark);
+}
+
+.detailCard.dark .textIconContainer p {
+  color: var(--color-text-dark);
+}
+
+.detailCard.dark button {
+  background-color: var(--color-secondary-dark);
+  color: var(--color-text-dark);
+}

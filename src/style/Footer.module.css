@@ -1,0 +1,74 @@
+/* Estilos generales del footer */
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.buttonScrollTop {
+  width: 100%;
+  justify-content: center;
+  border-radius: 0px;
+  padding: 0px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+
+}
+
+.footerContent {
+  width: 100%;
+  padding: 10px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dhLogoContainer {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+
+}
+
+.dhLogo {
+  max-height: 30px;
+}
+
+.socialIcons {
+  margin-right: 10px;
+}
+
+.socialIcons img {
+  max-height: 20px;
+  margin-left: 5px;
+}
+
+/* Estilos para el tema claro */
+.light .buttonScrollTop {
+  background-color: var(--color-secondary-light);
+  color: var(--color-text-light);
+}
+
+.light .footerContent {
+  background-color: var(--color-primary-light);
+  color: var(--color-text-light);
+}
+
+.light .socialIcons {
+  filter: invert(1)
+}
+
+/* Estilos para el tema oscuro */
+.dark .buttonScrollTop {
+  background-color: var(--color-secondary-dark);
+  color: var(--color-text-dark);
+}
+
+.dark .footerContent {
+  background-color: var(--color-primary-dark);
+  color: var(--color-text-dark);
+}
+
+.dark .dhLogo {
+  filter: invert(1)
+}

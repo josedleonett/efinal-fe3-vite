@@ -1,0 +1,93 @@
+/* Ajustes generales del form */
+.formContainer {
+  padding: 20px;
+  border-radius: 12px;
+  transition: background-color 0.3s ease;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.formContainer input {
+  border: none;
+  min-height: 30px;
+  min-width: 70vw;
+  border-radius: 3px;
+}
+
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+  font-weight:500;
+}
+
+.inputContainer.inputInvalid label {
+  color: var(--color-error-light);
+}
+
+.inputContainer.inputInvalid input {
+  outline: 2px solid var(--color-error-light);
+}
+.inputContainer.inputInvalid input::placeholder {
+  color: var(--color-error-light);
+}
+
+.formErrorContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: var(--color-text-light);
+  background-color: var(--color-error-light);
+  border-radius: 6px;
+  margin-top: 10px;
+}
+
+.formSuccessContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  justify-content: center;
+  color: var(--color-text-light);
+  background-color: var(--color-success-light);
+  border-radius: 6px;
+  margin-top: 10px;
+  padding: 20px;
+}
+
+.formSuccessContainer svg {
+  font-size: 50px;
+}
+.formSuccessContainer p {
+  margin: 0px;
+}
+
+.submitButton {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  text-transform: uppercase;
+  padding: 0px;
+}
+
+/* Ajustes para el tema claro */
+.light.formContainer {
+  background-color: var(--color-background-secondary-light);
+}
+
+.light.formContainer .submitButton {
+  background-color: var(--color-primary-light);
+}
+
+/* Ajustes para el tema oscuro */
+.dark.formContainer {
+  background-color: var(--color-primary-dark);
+}
+
+.dark.formContainer .submitButton {
+  background-color: var(--color-secondary-dark);
+}

@@ -1,0 +1,52 @@
+/* Estilos generales del navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+}
+
+li {
+  margin-right: 15px;
+  text-transform: uppercase;
+}
+
+.themeButton {
+  background-color: transparent;
+  text-decoration: none;
+}
+
+/* Estilos para el tema claro */
+.light {
+  background-color: var(--color-primary-light);
+  color: var(--color-text-light);
+}
+
+.light a {
+  color: var(--color-text-light);
+}
+
+
+.light .themeButton {
+  color: var(--color-text-light);
+}
+
+/* Estilos para el tema oscuro */
+.dark {
+  background-color: var(--color-primary-dark);
+  color: var(--color-text-dark);
+}
+
+.dark a {
+  color: var(--color-text-dark);
+}
+
+.dark .themeButton {
+  color: var(--color-text-dark);
+}
