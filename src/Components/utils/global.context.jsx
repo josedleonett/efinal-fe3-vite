@@ -3,16 +3,16 @@ import { colorPalette } from "../../style/colorPaletteList";
 
 
 const getStoredTheme = () => {
-  return sessionStorage.getItem("theme");
+  return localStorage.getItem("theme");
 };
 
 const getStoredSelectedThemeColor = () => {
-  const storedColor = sessionStorage.getItem("selectedThemeColor");
+  const storedColor = localStorage.getItem("selectedThemeColor");
   return storedColor ? JSON.parse(storedColor) : null;
 };
 
 const getStoredFavorites = () => {
-  const storedFavorites = sessionStorage.getItem("favorites");
+  const storedFavorites = localStorage.getItem("favorites");
   return storedFavorites ? JSON.parse(storedFavorites) : null;
 };
 
@@ -46,7 +46,7 @@ const reducer = (state, action) => {
       return { ...state, dentistList: action.payload };
 
     case "SET_THEME":
-      sessionStorage.setItem("theme", action.payload);
+      localStorage.setItem("theme", action.payload);
       return { ...state, theme: action.payload };
 
     case "SET_THEME_COLOR":
@@ -54,7 +54,7 @@ const reducer = (state, action) => {
         (color) => color.index === action.payload
       );
       if (selectedThemeColor) {
-        sessionStorage.setItem(
+        localStorage.setItem(
           "selectedThemeColor",
           JSON.stringify(selectedThemeColor)
         );
@@ -65,14 +65,14 @@ const reducer = (state, action) => {
 
     case "ADD_FAVORITE":
       const updatedFavorites = [...state.dentistFavorites, action.payload];
-      sessionStorage.setItem("favorites", JSON.stringify(updatedFavorites));
+      localStorage.setItem("favorites", JSON.stringify(updatedFavorites));
       return { ...state, dentistFavorites: updatedFavorites };
 
     case "REMOVE_FAVORITE":
       const filteredFavorites = state.dentistFavorites.filter(
         (dentist) => dentist.id !== action.payload
       );
-      sessionStorage.setItem("favorites", JSON.stringify(filteredFavorites));
+      localStorage.setItem("favorites", JSON.stringify(filteredFavorites));
       return { ...state, dentistFavorites: filteredFavorites };
 
     default:

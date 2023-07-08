@@ -9,6 +9,11 @@ import styles from '../style/Routes/Home.module.css';
 export const detailLoader = async ({params}) => {
   const { id } = params;
   const response = await fetch(`https://jsonplaceholder.typicode.com/users/${id}`);
+
+  if (!response.ok) {
+    throw Error("We could not find the Dentist")
+  }
+
   return response.json();
 }
 
