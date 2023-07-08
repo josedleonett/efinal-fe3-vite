@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import { faHeart } from "@fortawesome/free-solid-svg-icons";
+import { FaHeart } from "react-icons/fa";
 import styles from "../style/Card.module.css";
 import { ContextGlobal } from "./utils/global.context.jsx";
 
@@ -32,7 +33,7 @@ const Card = ({ name, username, id }) => {
         </div>
       </a>
       <button onClick={addFav} className={styles.favButton}>
-        {/* <FontAwesomeIcon icon={faHeart} color={isFavorite ? "red" : "gray"} className={styles.favIco} /> */}
+        <FaHeart color={isFavorite ? "red" : "gray"} className={styles.favIco} />
       </button>
     </div>
   );
