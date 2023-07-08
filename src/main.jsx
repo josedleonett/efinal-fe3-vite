@@ -9,7 +9,7 @@ import Contact from "./Routes/Contact";
 import Detail, { detailLoader } from "./Routes/Detail";
 import Favs from "./Routes/Favs";
 import NotFound from "./Routes/NotFound";
-import DetailError from './Routes/detailError';
+import DetailError from './Routes/DetailError';
 
 
 const router = createBrowserRouter([
