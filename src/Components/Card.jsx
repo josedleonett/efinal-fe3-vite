@@ -1,6 +1,4 @@
 import React, { useContext } from "react";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import { FaHeart } from "react-icons/fa";
 import styles from "../style/Card.module.css";
 import { ContextGlobal } from "./utils/global.context.jsx";
