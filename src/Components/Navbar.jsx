@@ -1,4 +1,5 @@
 import React, { useContext, useEffect } from 'react';
+import { Link } from "react-router-dom";
 import { FaAdjust } from "react-icons/fa";
 import styles from '../style/Navbar.module.css';
 import { ContextGlobal } from './utils/global.context.jsx';
@@ -27,13 +28,13 @@ const Navbar = () => {
       <div>
         <ul>
           <li>
-            <a href="/home">Home</a>
+            <Link to="/home">Home</Link>
           </li>
           <li>
-            <a href="/contact">Contact us</a>
+            <Link to="/contact">Contact us</Link>
           </li>
           <li>
-            <a href="/favs">Favs</a>
+            <Link to="/favs">Favs</Link>
           </li>
         </ul>
       </div>
