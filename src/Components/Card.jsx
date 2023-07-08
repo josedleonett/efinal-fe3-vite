@@ -19,7 +19,7 @@ const Card = ({ name, username, id }) => {
 
   return (
     <div className={`${styles.card} ${styles[state.theme]}`}>
-      <Link className={`${styles.card_child}`} to={`/dentist/${id}`}>
+      <Link className={`${styles.card_child}`} to={`/dentist/${id}`} key={id}>
         <img
           className={styles.cardImage}
           src="/images/doctor.jpg"
@@ -32,7 +32,10 @@ const Card = ({ name, username, id }) => {
         </div>
       </Link>
       <button onClick={addFav} className={styles.favButton}>
-        <FaHeart color={isFavorite ? "red" : "gray"} className={styles.favIco} />
+        <FaHeart
+          color={isFavorite ? "red" : "gray"}
+          className={styles.favIco}
+        />
       </button>
     </div>
   );
