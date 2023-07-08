@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { Link } from "react-router-dom";
 import { FaHeart } from "react-icons/fa";
 import styles from "../style/Card.module.css";
 import { ContextGlobal } from "./utils/global.context.jsx";
@@ -18,7 +19,7 @@ const Card = ({ name, username, id }) => {
 
   return (
     <div className={`${styles.card} ${styles[state.theme]}`}>
-      <a className={`${styles.card_child}`} href={`/dentist/${id}`}>
+      <Link className={`${styles.card_child}`} to={`/dentist/${id}`}>
         <img
           className={styles.cardImage}
           src="/images/doctor.jpg"
@@ -29,7 +30,7 @@ const Card = ({ name, username, id }) => {
           <h6>{id}</h6>
           <h6>{username}</h6>
         </div>
-      </a>
+      </Link>
       <button onClick={addFav} className={styles.favButton}>
         <FaHeart color={isFavorite ? "red" : "gray"} className={styles.favIco} />
       </button>
