@@ -1,6 +1,5 @@
 import React, { useContext } from 'react';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHeart, faEnvelope, faLink, faPhone } from "@fortawesome/free-solid-svg-icons";
+import { FaHeart, FaEnvelope, FaLink, FaPhone } from "react-icons/fa";
 import { ContextGlobal } from '../Components/utils/global.context';
 import styles from '../style/DetailCard.module.css';
 
@@ -25,22 +24,25 @@ const DetailCard = ({id, name, email, phone, website, username }) => {
         <h2>{name}</h2>
 
         <div className={`${styles.textIconContainer}`}>
-          <FontAwesomeIcon className={`${styles.icon}`} icon={faEnvelope} />
+          <FaEnvelope className={`${styles.icon}`} />
           <p>{email}</p>
         </div>
         <div className={`${styles.textIconContainer}`}>
-          <FontAwesomeIcon className={`${styles.icon}`} icon={faPhone} />
+          <FaPhone className={`${styles.icon}`} />
           <p>{phone}</p>
         </div>
         <div className={`${styles.textIconContainer}`}>
-          <FontAwesomeIcon className={`${styles.icon}`} icon={faLink} />
+          <FaLink className={`${styles.icon}`} />
           <p>{website}</p>
         </div>
       </div>
 
       <button onClick={addFav}>
         <p>Save as favorite</p>
-        <FontAwesomeIcon className={`${styles.icon}`} icon={faHeart} color={isFavorite ? "red" : "gray"} />
+        <FaHeart
+          className={`${styles.icon}`}
+          color={isFavorite ? "red" : "gray"}
+        />{" "}
       </button>
     </div>
   );

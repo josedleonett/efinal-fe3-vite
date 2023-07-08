@@ -28,11 +28,11 @@
   display: flex;
   align-items: center;
   gap: 6px;
-  margin-left: 10px;
 }
 
 .textIconContainer p {
   font-size: smaller;
+  padding: 0px;
 }
 
 .icon {

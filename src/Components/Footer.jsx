@@ -1,8 +1,7 @@
 import React, { useContext } from 'react';
 import styles from "../style/Footer.module.css";
 import { ContextGlobal } from './utils/global.context';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronUp } from '@fortawesome/free-solid-svg-icons';
+import { FaChevronUp } from 'react-icons/fa';
 
 const Footer = () => {
   const { state } = useContext(ContextGlobal);
@@ -14,7 +13,7 @@ const Footer = () => {
   return (
     <footer className={`${styles.footer} ${styles[state.theme]}`}>
       <button className={styles.buttonScrollTop} onClick={scrollToTop}>
-        <FontAwesomeIcon icon={faChevronUp} />
+        <FaChevronUp />
         <p>VOLVER AL PRINCIPIO</p>
       </button>
 

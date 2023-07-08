@@ -1,8 +1,7 @@
 import React, { useState, useContext } from "react";
 import styles from '../style/Form.module.css';
 import { ContextGlobal } from "./utils/global.context";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCircleCheck, faExclamationCircle, faPaperPlane } from "@fortawesome/free-solid-svg-icons";
+import {  FaCheckCircle, FaExclamationCircle, FaPaperPlane } from "react-icons/fa";
 
 const Form = () => {
   const { state } = useContext(ContextGlobal);
@@ -50,50 +49,54 @@ const Form = () => {
             isFormSubmitted && !isNameValid ? styles.inputInvalid : ""
           }`}
         >
-          <label htmlFor="name">
+          <label>
             Name:{`${isFormSubmitted && !isNameValid ? "*" : ""}`}
+            <input
+              name="name"
+              type="text"
+              value={name}
+              onChange={nameHandler}
+              placeholder="Insert your name"
+              required
+              autoComplete="true"
+            />
           </label>
-          <input
-            type="text"
-            value={name}
-            onChange={nameHandler}
-            placeholder="Insert your name"
-            required
-          />
         </div>
         <div
           className={`${styles.inputContainer} ${
             isFormSubmitted && !isEmailValid ? styles.inputInvalid : ""
           }`}
         >
-          <label htmlFor="name">
+          <label>
             Email:{`${isFormSubmitted && !isEmailValid ? "*" : ""}`}
+            <input
+              name="email"
+              type="text"
+              value={email}
+              onChange={emailHandler}
+              placeholder="Insert your email"
+              required
+              autoComplete="true"
+            />
           </label>
-          <input
-            type="text"
-            value={email}
-            onChange={emailHandler}
-            placeholder="Insert your email"
-            required
-          />
         </div>
 
         {isFormSubmitted && !isFormValid && (
           <div className={styles.formErrorContainer}>
-            <FontAwesomeIcon icon={faExclamationCircle} />
+            <FaExclamationCircle />
             <p>Por favor verifique su información nuevamente</p>
           </div>
         )}
 
         <button className={styles.submitButton} type="submit">
-          <FontAwesomeIcon icon={faPaperPlane} />
+          <FaPaperPlane />
           <p>Send</p>
         </button>
       </form>
 
       {isFormSubmitted && isFormValid && (
         <div className={styles.formSuccessContainer}>
-          <FontAwesomeIcon icon={faCircleCheck} />
+          <FaCheckCircle />
           <p>Gracias {name},</p>
           <p>te contactaremos cuanto antes vía mail.</p>
         </div>
