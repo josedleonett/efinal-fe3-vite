@@ -20,9 +20,8 @@ ReactDOM.createRoot(document.getElementById("root")).render(
             <Route path="contact" element={<Contact />} />
             <Route path="dentist/:id" element={<Detail />} />
             <Route path="favs" element={<Favs />} />
-            {/* <Route path="" element={<Navigate to="/home" replace />} /> */}
+            <Route path="*" element={<NotFound />} />
           </Route>
-          <Route path="*" element={<NotFound />} />
         </Routes>
       </ContextProvider>
     </BrowserRouter>
