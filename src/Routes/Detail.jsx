@@ -6,6 +6,12 @@ import { useLoaderData, useParams } from "react-router-dom";
 import styles from '../style/Routes/Home.module.css';
 //import { getDentist } from "../Data/Dentist";
 
+export const detailLoader = async ({params}) => {
+  const { id } = params;
+  const response = await fetch(`https://jsonplaceholder.typicode.com/users/${id}`);
+  return response.json();
+}
+
 const Detail = () => {
   const { state } = useContext(ContextGlobal);
   const { id } = useParams();
@@ -38,8 +44,3 @@ const Detail = () => {
 
 export default Detail;
 
-export const detailLoader = async ({params}) => {
-  const { id } = params;
-  const response = await fetch(`https://jsonplaceholder.typicode.com/users/${id}`);
-  return response.json();
-}

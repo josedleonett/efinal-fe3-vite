@@ -5,6 +5,11 @@ import styles from '../style/Routes/Home.module.css';
 import { useLoaderData } from 'react-router-dom';
 //import { getDentistList } from '../Data/Dentist';
 
+export const getDentistList = async () => {
+  const response = await fetch("https://jsonplaceholder.typicode.com/users");
+  return response.json();
+};
+
 const Home = () => {
   const { state, dispatch } = useContext(ContextGlobal);
 
@@ -50,7 +55,4 @@ const Home = () => {
 
 export default Home;
 
-export const getDentistList = async () => {
-  const response = await fetch("https://jsonplaceholder.typicode.com/users");
-  return response.json();
-};
+
